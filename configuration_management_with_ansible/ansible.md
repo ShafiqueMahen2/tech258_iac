@@ -35,22 +35,22 @@ We have now installed Ansible on our controller node successfully! Time to confi
 2) `sudo ansible web -m ping` - This command will ping a message and ask for the status of the ansible agent. First try: <br>
 ![](images/ansible_ping_first_try.png)
 
-The error shows that only localhost is available i.e. no hosts have been provided in our `hosts` file. Therefore, for this to work we have to provide public ip of our `web` and `db` agents in the `hosts` file. Run the command `sudo nano hosts`. Example: <br>
-![](images/ansible_hosts_file.png)
+    The error shows that only localhost is available i.e. no hosts have been provided in our `hosts` file. Therefore, for this to work we have to provide public ip of our `web` and `db` agents in the `hosts` file. Run the command `sudo nano hosts`. Example: <br>
+    ![](images/ansible_hosts_file.png)
 
-Now that we have done this we can try the `ping` again. Second try: <br>
-![](images/ansible_ping_second_try.png)
+    Now that we have done this we can try the `ping` again. Second try: <br>
+    ![](images/ansible_ping_second_try.png)
 
-We now have to group our hosts. As we tried to ping `web` we therefore have to group the corresponding IP with that, and do the same with the `db`. 
+    We now have to group our hosts. As we tried to ping `web` we therefore have to group the corresponding IP with that, and do the same with the `db`. 
 
-Now that we have done this we can try the `ping` again. Third try: <br>
-![](images/ansible_ping_third_try.png)
+    Now that we have done this we can try the `ping` again. Third try: <br>
+    ![](images/ansible_ping_third_try.png)
 
-We are now getting a permission denied error (`UNREACHABLE!`) so we have to give the controller credentials. We have to first put our corresponding private key so that the controller can SSH into our agents (via SCP command). We can now reference our private key path. Do this by updating our `hosts` file again. Example: <br>
-![](images/ansible_hosts_correctly_configured.png)
+    We are now getting a permission denied error (`UNREACHABLE!`) so we have to give the controller credentials. We have to first put our corresponding private key so that the controller can SSH into our agents (via SCP command). We can now reference our private key path. Do this by updating our `hosts` file again. Example: <br>
+    ![](images/ansible_hosts_correctly_configured.png)
 
-Now that we have grouped our public IP's and given the controller credentials ping should now work. Final try: <br>
-![](images/ansible_ping_success.png)
+    Now that we have grouped our public IP's and given the controller credentials ping should now work. Final try: <br>
+    ![](images/ansible_ping_success.png)
 
 We have now correctly troubleshooted our ping command. Now that we know that our controller can communicate with our agents we can move on.
 
