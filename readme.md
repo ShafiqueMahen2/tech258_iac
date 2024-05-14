@@ -18,4 +18,4 @@ IaC can be used in various scenarios and environments, including:
 - **Cloud Environments**: AWS, Azure, GCP
 - **On-Premises Data Centers**: Physical or Virtual Servers
 - **Containerised Environments**: Kubernetes
-- **Disaster Recovery**: Automated infrastructure recovery processes# tech258_iac
+- **Disaster Recovery**: Automated infrastructure recovery processes
