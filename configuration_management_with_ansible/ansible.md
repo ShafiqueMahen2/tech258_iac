@@ -72,7 +72,19 @@ Breaking down the command:
 `-a` - Specify the argument here.
 
 ### Example adhoc commands
-- `sudo ansible all -a "uname -a"` - Gives us system information about our ansible agents from controller
-- `sudo ansible all -a "free"` - Gives us information about free space in our ansible agents
-- `sudo ansible all -a "date"` - Give us the date/time of our ansible agents
+- `sudo ansible all -a "uname -a"` - Gives us system information about our ansible agents from controller. Example: <br>
+![](images/ansible_adhoc_uname.png)
+
+- `sudo ansible all -a "free"` - Gives us information about free space in our ansible agents. Example: <br>
+![](images/ansible_adhoc_free.png)
+
+- `sudo ansible all -a "date"` - Give us the date/time of our ansible agents. Example: <br>
+![](images/ansible_adhoc_date.png)
+
+- `sudo ansible all -a "ls"` - Lists home directories of our ansible agents. Example: <br>
+![](images/ansible_adhoc_ls.png)
+
+- `sudo ansible all -a "sudo apt-get update -y"` - Updates local package list on our ansible agents. Example: <br>
+![](images/ansible_adhoc_update.png)
+
   
