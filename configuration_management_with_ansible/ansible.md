@@ -87,4 +87,43 @@ Breaking down the command:
 - `sudo ansible all -a "sudo apt-get update -y"` - Updates local package list on our ansible agents. Example: <br>
 ![](images/ansible_adhoc_update.png)
 
-  
+  ## Playbook
+  ### Playbook Overview
+  Ansible playbooks are written in YAML format and start with three dashes (---). Playbooks consist of a series of plays, where each play defines tasks to be executed on specific hosts. Each task within a play defines a specific action to be performed, such as installing a package, copying files, or running commands.
+
+  How do we run a playbook: Example: <br>
+  ```
+  sudo ansible-playbook nginx-play.yml
+  ```
+
+  If we want to troubleshoot we can specify verbose output: Example: <br>
+  ```
+  sudo ansible-playbook nginx-play.yml -vvv
+  ```
+
+  ### YAML Tips
+  - `---` -> YAML starts with three dashes
+  - Use 2 spaces over tab (Especially if using VS code)
+
+  ### Example Playbooks
+  #### Nginx Playbook
+  ```
+   ---
+   # creating a playbook to install/configure nginx in the web server
+
+   # YAML starts with three dashes
+
+   # add the name of the host web
+   - hosts: web
+
+   # see the logs gather facts
+   gather_facts: yes
+
+   # provide admin access - sudo
+   become: true
+
+   # add instructions to install nginx on the web server
+   tasks:
+    - name: Installing Nginx web server
+      apt: pkg=nginx state=present
+  ```
