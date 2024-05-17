@@ -127,3 +127,23 @@ Breaking down the command:
     - name: Installing Nginx web server
       apt: pkg=nginx state=present
   ```
+
+  #### MongoDB Playbook
+  ```
+  # Playbook to install/config mongodb in the db server
+
+  ---
+  # Add the name of the host (db)
+  - hosts: db
+
+  # See the logs
+    gather_facts: yes
+
+  # Provide admin access
+    become: true
+ 
+  # Add instructions
+    tasks:
+    - name: install and configure Mongodb
+      apt: pkg=mongodb state=present
+  ```
