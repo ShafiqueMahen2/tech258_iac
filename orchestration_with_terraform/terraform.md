@@ -126,11 +126,11 @@ Breaking this down:
 
 ## Using Terraform to create a new GitHub repository
 1) Generate a Personal Access Token (PAT) on GitHub:
-- Click on your GitHub `Profile Picture > Settings`
+- Click on your GitHub `Profile Picture > Settings` <br>
 ![](images/pat_step_1.png)
-- Navigate to `Developer Settings`
+- Navigate to `Developer Settings` <br>
 ![](images/pat_step_2.png)
-- Choose `Personal access tokens` > `Fine-grained tokens` > `Generate new token`
+- Choose `Personal access tokens` > `Fine-grained tokens` > `Generate new token` <br>
 ![](images/pat_step_3.png)
 - Set up your PAT. Example: <br>
 ![](images/pat_example.png)
