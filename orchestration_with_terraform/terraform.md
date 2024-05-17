@@ -67,7 +67,7 @@ provider "aws" {
 }
 ```
 Now that we have done this, save the file and exit. Run `terraform init`. This will create a working directory for Terraform (`.terraform`), downloading the necessary provider plugins and modules e.g. AWS. Example output: <br>
-![terraform_init_output.png](images/terraform_init_output.png)
+![terraform_init_output.png](images/terraform_init_output.png) <br>
 2) Now we have initialised our Terraform directory we can go back into our `main.tf` file and set up our resource which we want to deploy on AWS. In this case we want to make a file that deploys a EC2 instance.
 We have to create a resource block for this. Example: <br>
 ```
