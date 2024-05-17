@@ -54,7 +54,7 @@ echo $AWS_SECRET_ACCESS_KEY
 ```
 This will output your keys. **Do not share these with anyone!**
 
-## Using Terraform
+## Using Terraform with AWS
 1) Create a new directory for our Terraform project e.g. `terraform-tech258`.
 2) Create a new `main.tf` file. This file will store our configuration.
 
@@ -123,3 +123,25 @@ Breaking this down:
 1) Variable Declaration: Variable name and it's type
 2) Default Value: The default value our variable will use (if no other value is provided).
 3) Description: Explains the purpose of our variable.
+
+## Using Terraform to create a new GitHub repository
+1) Generate a Personal Access Token (PAT) on GitHub:
+- Click on your GitHub `Profile Picture > Settings`
+![](images/pat_step_1.png)
+- Navigate to `Developer Settings`
+![](images/pat_step_2.png)
+- Choose `Personal access tokens` > `Fine-grained tokens` > `Generate new token`
+![](images/pat_step_3.png)
+- Set up your PAT. Example: <br>
+![](images/pat_example.png)
+![](images/pat_example_2.png)
+Important:
+For Permissions: Make sure to set `Administration` to `Read and write` so Terraform has permissions to create a new repo.
+
+2) Configure resource on Terraform. Example: <br>
+![](images/github_resource_block.png)
+
+**WARNING**: Make sure your `variable.tf` isn't tracked by GitHub to keep the token safe!
+
+Our repo can now be automatically generated! Example: <br>
+![](images/automated_repo_example.png)
